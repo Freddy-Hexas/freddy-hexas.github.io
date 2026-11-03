@@ -1,144 +1,69 @@
-# 个人主页
+# Fang Xu · Personal Homepage
 
-主页地址：<https://freddy-hexas.github.io/>
+主页：<https://freddy-hexas.github.io/>
 
-这是一个适合逐步填写的个人主页，使用 HTML、CSS 和 JavaScript，无需安装依赖或运行构建。页面布局参考 [shiyicao.com](https://shiyicao.com/)，代码独立编写，未使用对方的个人资料、照片或论文内容。
+个人学术主页，使用 HTML、CSS、JavaScript 和静态资源，无需构建即可部署。布局参考 [shiyicao.com](https://shiyicao.com/)，代码独立实现。
 
-## 以后如何填内容
+## 内容维护
 
-日常只需编辑 `content.json`。在 GitHub 打开这个文件，点击铅笔图标，修改后选择 **Commit changes**，网站会自动重新发布。
+日常内容集中在 `content.json`，在 GitHub 编辑并提交后，GitHub Pages 会自动更新。
 
-| 字段 | 用途 |
+| 字段 | 内容 |
 | --- | --- |
-| `profile.name` | 英文姓名、导航名称和网页标题 |
-| `profile.nameChinese` | 中文姓名；留空则隐藏 |
-| `profile.description` | 搜索结果中的网页简介 |
-| `profile.tagline` | 身份或单位；留空则隐藏 |
-| `profile.bio` | 简介段落，每个字符串为一段 |
-| `profile.photo` | 照片路径，例如 `assets/photo.jpg` |
-| `profile.photoAlt` | 照片文字描述 |
-| `profile.links` | 邮箱、简历、GitHub、Scholar 等链接 |
+| `profile` | 姓名、简介、照片和 Email / CV / GitHub 链接 |
 | `research` | 研究方向 |
-| `news` | 动态，按数组顺序显示，前四条以外可以展开 |
-| `publications` | 论文 |
-| `openSource` | 开源项目 |
-| `talks` | 报告和演讲 |
-| `blog` | 博客文章链接 |
+| `news` | 按新到旧排列的动态 |
+| `publications` | 论文和在审稿件；请保留准确状态 |
+| `projects` | 研究及课程项目 |
+| `experience` | 实验室与实习经历 |
+| `education` | 教育背景和课程 |
+| `service` | 助教与学生组织经历 |
+| `skills` | 编程、建模、硬件、微加工及语言技能 |
 
-数组留为 `[]` 时显示简洁的待更新提示。填写后自动替换提示。所有正文为纯文本，不需要写 HTML。下面的示例仅供填写参考，未添加到网站。
+内容根据 2026 年 10 月 30 日更新的学术 CV 整理。ARISE 标注为在审稿件；已发表论文链接到期刊及 DOI，DREAM 链接到公开仓库。公开联系信息使用学校邮箱。
 
-### 简介、照片、邮箱和简历
+JSON 使用英文双引号；同一数组中的记录以逗号分隔，最后一条后不加逗号。正文为纯文本，不需要写 HTML。
 
-把照片或 PDF 上传到仓库的 `assets` 目录，再修改对应字段。例如：
-
-```json
-"bio": ["第一段简介。", "第二段简介。"],
-"photo": "assets/photo.jpg",
-"links": [
-  { "label": "Email", "url": "mailto:your-email@example.com" },
-  { "label": "CV", "url": "assets/cv.pdf" },
-  { "label": "GitHub", "url": "https://github.com/Freddy-Hexas" }
-]
-```
-
-没有照片时保留占位图；没有填写的联系方式不会生成无效按钮。请使用你自己的邮箱替换示例邮箱。
-
-### 研究方向
-
-```json
-"research": [
-  {
-    "title": "方向名称",
-    "description": "简短说明。",
-    "url": "",
-    "links": []
-  }
-]
-```
-
-### 动态和报告
-
-`news`、`talks` 使用相同结构，最新一条放在前面。日期作为文字原样显示。
-
-```json
-"news": [
-  { "date": "Nov '26", "text": "一条动态。", "url": "" }
-]
-```
-
-### 论文和开源项目
-
-`publications`、`openSource` 使用相同结构。不需要的字段可以留空或省略。
-
-```json
-"publications": [
-  {
-    "title": "论文标题",
-    "url": "https://example.com/paper",
-    "authors": "作者列表",
-    "venue": "会议或期刊 · 年份",
-    "description": "简短说明或关键词。",
-    "links": [
-      { "label": "Paper", "url": "https://example.com/paper" },
-      { "label": "Code", "url": "https://github.com/owner/repository" }
-    ]
-  }
-]
-```
-
-### 博客
-
-```json
-"blog": [
-  {
-    "date": "Nov '26",
-    "title": "文章标题",
-    "description": "可选的一句话摘要。",
-    "url": "https://example.com/post"
-  }
-]
-```
-
-博客目前是文章链接列表。以后可以在本仓库增加文章 HTML，或链接到已有博客。
-
-JSON 使用英文双引号，数组内多条记录之间用逗号分隔，最后一条后面不要加逗号。
+论文、项目和经历可使用 `id`、`title`、`period`、`role`、`description`、`bullets`、`links` 字段。论文还支持 `authors` 和 `venue`，项目支持奖项说明 `highlight`。`id` 用于站内跳转，修改时也请更新对应链接。链接可设置 `newTab: true`。
 
 ## 文件结构
 
 ```text
-index.html       页面结构和栏目标题
-styles.css       布局、颜色和手机适配
-site.js          内容加载、主题和导航交互
-content.json     你的个人内容
-favicon.svg      网站图标
-assets/          以后可创建此目录，存放照片、简历等文件
-.nojekyll        让 GitHub Pages 直接发布静态文件
+index.html                 页面结构、初始简介和 SEO 信息
+styles.css                 布局、主题、手机适配和滚动渐显
+site.js                    内容加载与交互
+content.json               个人内容
+assets/portrait.jpg        主页照片
+assets/Fang-Xu-CV.pdf       可公开下载的学术 CV
+assets/fonts/              Source Serif 4 字体及开源许可
+scripts/build_cv.py        从 content.json 生成公开 CV
+.nojekyll                  直接发布静态文件
 ```
 
-栏目名称可以在 `index.html` 中修改。网站支持系统深色模式、记住手动切换的主题、手机菜单和键盘操作。字体来自 Google Fonts，加载失败会自动使用系统字体。
+标题使用本地 Source Serif 4 字体：桌面字号 64px，字重 500，字间距 -1px。手机端自动调整。正文 Inter 通过 Google Fonts 加载，失败时使用系统字体。
 
-## 滚动渐显效果
+内容首次进入视口时会缓缓淡入并轻微上移，约 1 秒完成。开启系统“减少动态效果”时，内容直接显示。
 
-内容首次滚动进入视口时，会在约 1 秒内淡入并轻微上移，参考旧主页的滚动渐显动效。之后填写的论文、项目和动态也会自动使用这个效果。
+## 更新公开 CV
 
-可在 `styles.css` 的 `.scroll-reveal` 中调整动画时间和移动距离。开启系统“减少动态效果”时，内容直接显示。
+PDF 是静态文件。更新网页 JSON 后如需同步 CV，请在装有 ReportLab 的 Python 3.9+ 环境运行：
 
-## GitHub Pages 设置
+```sh
+python3 scripts/build_cv.py
+```
 
-仓库名称应为 `freddy-hexas.github.io`。进入 **Settings → Pages**：
-
-1. Source 选择 **Deploy from a branch**。
-2. Branch 选择 **main**，目录选择 **/ (root)**。
-3. 点击 **Save**，等待部署完成。
-
-此后每次向 `main` 提交修改，GitHub Pages 会自动更新。网站使用相对资源路径，不依赖其他托管服务。
+生成的公开版 CV 使用学校邮箱、GitHub 和主页链接，未加入私人电话号码。修改后检查 PDF 排版，再一起提交。
 
 ## 本地预览
 
-在此目录运行：
+在仓库目录运行：
 
 ```sh
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-浏览器访问 <http://127.0.0.1:8000/>。请通过本地服务器预览，让 `content.json` 正常加载。
+浏览器打开 <http://127.0.0.1:8000/>。
+
+## 部署
+
+GitHub Pages 使用 **main → / (root)**，向 `main` 推送后自动发布。若设置自定义域名，请先拉取 GitHub 创建的 `CNAME` 提交，再推送本地更新。

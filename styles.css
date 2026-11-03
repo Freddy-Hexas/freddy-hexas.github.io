@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("assets/fonts/source-serif-4-latin-500.woff2") format("woff2");
+}
 :root {
   color-scheme: light;
   --background: #fbfbfe;
@@ -51,15 +58,15 @@ svg { display: block; }
 .theme-toggle .sun, [data-theme="dark"] .theme-toggle .moon { display: none; }
 [data-theme="dark"] .theme-toggle .sun { display: block; }
 .menu-toggle { display: none; }
-.hero { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 46px; align-items: center; padding-block: 66px 72px; }
+.hero { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 46px; align-items: start; padding-block: 66px 72px; }
 .portrait { width: 210px; aspect-ratio: 5 / 6; border-radius: var(--radius); overflow: hidden; background: var(--soft); border: 1px solid var(--line); }
-.portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.portrait img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
 .portrait-placeholder { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; color: var(--muted); }
 .portrait-placeholder svg { width: 88px; height: 105px; fill: none; stroke: currentColor; stroke-width: 1.25; opacity: .45; }
 .portrait-placeholder span { font-size: 11px; letter-spacing: .05em; }
 .hero-copy { min-width: 0; }
 .name-row { display: flex; align-items: baseline; gap: 22px; flex-wrap: wrap; }
-h1 { font-family: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive; font-size: clamp(48px, 5.5vw, 72px); font-weight: 400; line-height: 1.4; margin: 0 0 14px; overflow-wrap: anywhere; }
+h1 { font-family: "Source Serif 4", Georgia, "Times New Roman", serif; font-size: 64px; font-weight: 500; letter-spacing: -1px; line-height: 1.2; margin: 0 0 14px; overflow-wrap: anywhere; }
 .name-chinese { font-size: 21px; font-weight: 600; letter-spacing: .15em; color: var(--muted); }
 .tagline { margin: 0 0 16px; font-weight: 500; }
 .biography p { margin: 0 0 16px; overflow-wrap: anywhere; }
@@ -91,14 +98,27 @@ p { margin-top: 0; }
 .entry { padding-block: 20px; border-bottom: 1px solid var(--line); }
 .entry:first-child { padding-top: 5px; }
 .entry:last-child { border-bottom: 0; padding-bottom: 0; }
+.entry-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 22px; }
+.entry-heading h3 { margin-bottom: 0; }
+.entry-period { flex-shrink: 0; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
 .entry p { margin: 4px 0 0; font-size: 14px; overflow-wrap: anywhere; }
+.entry .entry-role { font-size: 13px; color: var(--muted); }
 .entry .venue { color: var(--accent); font-weight: 500; }
+.entry .entry-highlight { color: var(--accent); font-size: 13px; font-weight: 500; }
 .entry .description, .entry .authors { color: var(--muted); }
+.entry .authors strong { color: var(--text); font-weight: 600; }
+.entry-bullets { margin: 9px 0 0; padding-left: 19px; font-size: 14px; }
+.entry-bullets li { padding-left: 3px; margin-top: 4px; overflow-wrap: anywhere; }
 .entry-links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 9px; font-size: 13px; font-weight: 500; }
+.skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 23px 36px; }
+.skill-item h3 { font-size: 15px; }
+.skill-item p { margin: 0; color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
 .post-title { font-size: 15px; }
 .content-error { color: var(--muted); padding: 16px 0; }
 .site-footer { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 25px 35px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 .site-footer p { margin: 0; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 16px; }
+.footer-links a { color: var(--muted); }
 .back-to-top { color: var(--muted); white-space: nowrap; }
 .scroll-reveal {
   opacity: 0;
@@ -131,14 +151,18 @@ p { margin-top: 0; }
   .profile-links { margin-top: 18px; }
   h2 { font-size: 24px; }
   .research-grid { grid-template-columns: 1fr; }
+  .entry-heading { display: block; }
+  .entry-period { display: block; margin-top: 2px; }
+  .site-footer { flex-wrap: wrap; }
 }
 @media (max-width: 480px) {
   .hero { grid-template-columns: 1fr; gap: 24px; }
   .portrait { width: 145px; }
-  h1 { font-size: 57px; }
+  h1 { font-size: 54px; }
   .section { padding-block: 25px 30px; }
   .timeline li { grid-template-columns: 68px minmax(0, 1fr); gap: 14px; }
   .site-footer { font-size: 11px; gap: 12px; }
+  .skills-grid { grid-template-columns: 1fr; gap: 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

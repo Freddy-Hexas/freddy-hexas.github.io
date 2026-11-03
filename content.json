@@ -1,20 +1,220 @@
 {
+  "contentUpdated": "2026-11-03",
   "profile": {
     "name": "Fang Xu",
     "nameChinese": "",
-    "description": "Fang Xu's personal homepage.",
-    "tagline": "",
-    "bio": [],
-    "photo": "",
-    "photoAlt": "",
+    "description": "Fang Xu is a biomedical engineering undergraduate at ShanghaiTech University, working on neural interfaces, computational design, and machine learning for biomedical signals.",
+    "tagline": "Biomedical Engineering · ShanghaiTech University",
+    "bio": [
+      "I am an undergraduate student in Biomedical Engineering at ShanghaiTech University, working in the Wireless and Smart Bio-electronics (WiSe) Lab with Prof. Ze Xiong.",
+      "My research connects neural interfaces, computational design, and machine learning for biomedical signals. I develop tools for organoid electrode-interface design and cross-subject EEG emotion recognition.",
+      "Previously, I worked with Prof. Sung Il Park on adaptive wireless power transfer and flexible optoelectronic devices. I expect to graduate in July 2027."
+    ],
+    "photo": "assets/portrait.jpg",
+    "photoAlt": "Portrait of Fang Xu",
     "links": [
+      { "label": "Email", "url": "mailto:xufang2023@shanghaitech.edu.cn" },
+      { "label": "CV", "url": "assets/Fang-Xu-CV.pdf", "newTab": true },
       { "label": "GitHub", "url": "https://github.com/Freddy-Hexas" }
     ]
   },
-  "research": [],
-  "news": [],
-  "publications": [],
-  "openSource": [],
-  "talks": [],
-  "blog": []
+  "research": [
+    {
+      "title": "Neural interfaces",
+      "description": "Computational design of flexible electrode scaffolds for brain organoids, bringing together geometry, routing, fabrication, and finite-element evaluation.",
+      "url": "#project-arise",
+      "links": [{ "label": "ARISE", "url": "#project-arise" }]
+    },
+    {
+      "title": "Machine learning for biosignals",
+      "description": "Cross-subject EEG emotion recognition using multi-expert models, signal features, functional connectivity, and depression-aware fusion.",
+      "url": "#project-dream",
+      "links": [{ "label": "DREAM", "url": "#project-dream" }]
+    },
+    {
+      "title": "Wireless bioelectronics",
+      "description": "Adaptive wireless power transfer and flexible optoelectronic systems for optogenetic interfaces, from circuit design to microfabrication.",
+      "url": "#project-wireless",
+      "links": [{ "label": "Device research", "url": "#project-wireless" }]
+    }
+  ],
+  "news": [
+    {
+      "date": "Sep '26",
+      "text": "Completed an investment-research internship focused on semiconductors and embodied intelligence.",
+      "url": "#experience-internship"
+    },
+    {
+      "date": "Oct '25",
+      "text": "Our paper on single-image 3D reconstruction of painted potteries was published in npj Heritage Science.",
+      "url": "https://www.nature.com/articles/s40494-025-02114-x"
+    },
+    {
+      "date": "Sep '25",
+      "text": "Joined the WiSe Lab at ShanghaiTech University as an undergraduate researcher.",
+      "url": "#experience-wise"
+    }
+  ],
+  "publications": [
+    {
+      "id": "publication-arise",
+      "title": "ARISE: Automated Routing and Integrated Simulation of Electrodes for Organoid Interfaces",
+      "authors": "Fang Xu, Xingming Wen, Ze Xiong",
+      "venue": "Manuscript under review",
+      "description": "Computational design and integrated simulation of flexible electrode interfaces for brain organoids.",
+      "links": [{ "label": "Project overview", "url": "#project-arise" }]
+    },
+    {
+      "id": "publication-pottery",
+      "title": "Single-image 3D reconstruction of painted potteries using AI diffusion and feedforward models",
+      "url": "https://www.nature.com/articles/s40494-025-02114-x",
+      "authors": "Yuehan Wang, Haozhe Cui, Jiaying Du, Haichuan Di, Le Yan, Fang Xu, Kaiqi Cui, Yiduo Liu, Dongdong Tu",
+      "venue": "npj Heritage Science 13, 545 · 2025",
+      "description": "Co-authored a study benchmarking single-image 3D reconstruction for painted pottery. Contributed to data collection, experimental work, and analysis.",
+      "links": [
+        { "label": "Paper", "url": "https://doi.org/10.1038/s40494-025-02114-x" },
+        { "label": "Code", "url": "https://github.com/eddie-cui/ArteEval" },
+        { "label": "Project overview", "url": "#project-pottery" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "project-arise",
+      "title": "ARISE · Organoid electrode-interface design",
+      "role": "Research project · WiSe Lab",
+      "description": "An integrated design-and-simulation workbench for organoid electrode interfaces.",
+      "bullets": [
+        "Independently developed a pipeline from GDS scaffold geometries to electrode placement, graph-based routing, constrained interconnect selection, and four-sided pad layouts.",
+        "Integrated batch geometry checks, coverage analysis, and COMSOL evaluation of contact pressure, strain, and material fraction; fabricated flexible electrode prototypes with Xingming Wen."
+      ],
+      "links": [{ "label": "Manuscript details", "url": "#publication-arise" }]
+    },
+    {
+      "id": "project-dream",
+      "title": "DREAM · Cross-subject EEG emotion recognition",
+      "role": "Research project · WiSe Lab",
+      "highlight": "Gold Prize · 11th National Undergraduate Biomedical Engineering Innovation and Design Competition",
+      "description": "A depression-aware, multi-expert EEG emotion-recognition pipeline.",
+      "bullets": [
+        "Independently developed and optimized models for 30-channel, 10-second EEG segments, combining EEGNet-based spatiotemporal modeling, statistical features, MODMA-derived priors, and SEED-based stimulus prototypes.",
+        "Designed functional-connectivity residual fusion, constrained within-subject ranking, and targeted boundary re-ranking; worked with the team on the final inference pipeline."
+      ],
+      "links": [{ "label": "Code & report", "url": "https://github.com/Freddy-Hexas/DREAM" }]
+    },
+    {
+      "id": "project-wireless",
+      "title": "Adaptive wireless power transfer for optogenetics",
+      "role": "Research project · Park Lab",
+      "description": "AI-guided antenna control for a 13.56 MHz wireless power system.",
+      "bullets": [
+        "Developed an antenna-control strategy using RSSI and animal-posture features to predict optical power at an implanted receiver and select transmitting antennas in real time.",
+        "Contributed to antenna impedance matching and antenna-array scanning and switching logic to address unstable power delivery."
+      ]
+    },
+    {
+      "id": "project-optoelectronics",
+      "title": "Flexible wireless optoelectronic devices",
+      "role": "Research project · Park Lab",
+      "description": "Device design, microfabrication, assembly, and encapsulation for wireless optoelectronic interfaces.",
+      "bullets": [
+        "Independently completed the single-channel device workflow on flexible Cu/polyimide substrates, including photolithography, wet etching, micro-LED soldering, testing, and PDMS/parylene encapsulation.",
+        "Collaborated with lab colleagues on the design, fabrication, soldering, testing, and encapsulation of four-channel devices."
+      ]
+    },
+    {
+      "id": "project-ultrasound",
+      "title": "Ultrasound image analysis: classical methods to foundation models",
+      "period": "Mar – Jun 2026",
+      "role": "Course project · Instructor: Prof. Xuejun Qian",
+      "bullets": [
+        "Compared four segmentation strategies and three classifiers on 120 breast ultrasound images with 36 radiomic features using stratified five-fold cross-validation. BUSAT+SVM achieved 89.2% accuracy; BUSAT+random forest achieved an AUC of 0.940.",
+        "Benchmarked SAM2/MedSAM prompted segmentation and frozen foundation-model encoders for classification; BiomedCLIP+SVM achieved an AUC of 0.935. Also analyzed eight neck ultrasound acquisitions for carotid-artery quantification."
+      ]
+    },
+    {
+      "id": "project-pottery",
+      "title": "Single-image 3D reconstruction of painted pottery",
+      "period": "Jan – Oct 2025",
+      "role": "Research project · Advisor: Prof. Dongdong Tu",
+      "bullets": [
+        "Contributed to data collection and experiments comparing diffusion-based novel-view synthesis and feedforward 3D reconstruction methods.",
+        "Benchmarked seven reconstruction methods and evaluated appearance and geometry using PSNR, SSIM, LPIPS, Chamfer distance, and IoU."
+      ],
+      "links": [{ "label": "Published paper", "url": "https://doi.org/10.1038/s40494-025-02114-x" }]
+    },
+    {
+      "id": "project-adc",
+      "title": "Single-slope ADC for EEG acquisition",
+      "period": "May – Jun 2025",
+      "role": "Course project · Instructor: Prof. Xiaochun Lai",
+      "bullets": [
+        "Designed and simulated a single-slope ADC module for an EEG acquisition front end in Cadence Virtuoso.",
+        "Designed a folded-cascode OTA, sample-and-hold circuit, non-overlap clock, and linear ramp generator, focusing on circuit precision and timing."
+      ]
+    },
+    {
+      "id": "project-ecg",
+      "title": "ECG acquisition and real-time waveform display",
+      "period": "Dec 2024 – Jan 2025",
+      "role": "Course project · Instructor: Dan Li",
+      "bullets": [
+        "Designed the PCB and coordinated fabrication for an ECG front end with an instrumentation amplifier, two gain stages, and a 50 Hz notch filter.",
+        "Programmed an Arduino UNO for sampling and PC communication, integrating the analog front end with real-time waveform display."
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "id": "experience-wise",
+      "title": "Wireless and Smart Bio-electronics (WiSe) Lab",
+      "period": "Sep 2025 – Present",
+      "role": "Undergraduate Researcher · ShanghaiTech University",
+      "description": "Advisor: Prof. Ze Xiong. Research on computational design of organoid electrode interfaces and cross-subject EEG emotion recognition.",
+      "projectIds": ["project-arise", "project-dream"]
+    },
+    {
+      "id": "experience-park",
+      "title": "Park Lab",
+      "period": "Sep 2024 – Sep 2025",
+      "role": "Undergraduate Researcher · ShanghaiTech University",
+      "description": "Advisor: Prof. Sung Il Park. Worked on AI-driven adaptive wireless power transfer and flexible wireless optoelectronic devices.",
+      "projectIds": ["project-wireless", "project-optoelectronics"]
+    },
+    {
+      "id": "experience-internship",
+      "title": "Shanghai Shangchuang Xinwei Investment Management Co., Ltd.",
+      "period": "Jul – Sep 2026",
+      "role": "Investment Assistant · Shanghai, China",
+      "description": "Conducted industry and technology research on semiconductors and embodied intelligence, examining value chains, product roadmaps, competitive positioning, and commercialization."
+    }
+  ],
+  "education": [
+    {
+      "title": "ShanghaiTech University",
+      "period": "Sep 2023 – Expected Jul 2027",
+      "role": "B.Eng. in Biomedical Engineering",
+      "description": "Selected coursework: Biomedical Signals and Systems I; Biomedical Electronics I/II; Brain Science and Brain Disorders; Fundamentals of Micro/Nano Device Fabrication; Brain Organoids."
+    }
+  ],
+  "service": [
+    {
+      "title": "Teaching Assistant",
+      "period": "2025 – 2026",
+      "role": "ShanghaiTech University",
+      "description": "Teaching-assistant appointments in world archaeology (Fall 2026), management (Spring 2026), and non-fiction writing (Fall 2025)."
+    },
+    {
+      "title": "Head, New Media Department",
+      "period": "Oct 2023 – Aug 2024",
+      "role": "ShanghaiTech University Student Union"
+    }
+  ],
+  "skills": [
+    { "title": "Programming", "items": ["Python", "MATLAB", "C/C++", "PyTorch"] },
+    { "title": "Modeling & simulation", "items": ["COMSOL Multiphysics", "Abaqus", "CST", "AutoCAD", "Solidworks"] },
+    { "title": "Hardware & design", "items": ["Altium Designer", "Cadence Virtuoso", "L-Edit", "Silvaco TCAD", "SEMulator3D", "Multisim", "Keil µVision"] },
+    { "title": "Microfabrication", "items": ["Photolithography", "Etching", "Micro-soldering", "Encapsulation"] },
+    { "title": "Languages", "items": ["Chinese (native)", "English (proficient)", "French (elementary)"] }
+  ]
 }

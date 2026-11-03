@@ -3,7 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Fang Xu's personal homepage.">
+  <meta name="description" content="Fang Xu is a biomedical engineering undergraduate at ShanghaiTech University, working on neural interfaces, computational design, and machine learning for biomedical signals.">
+  <meta name="author" content="Fang Xu">
+  <meta property="og:title" content="Fang Xu · Biomedical Engineering">
+  <meta property="og:description" content="Neural interfaces, computational design, and machine learning for biomedical signals. ShanghaiTech University.">
+  <meta property="og:image" content="https://freddy-hexas.github.io/assets/portrait.jpg">
+  <meta property="og:type" content="website">
   <meta name="color-scheme" content="light dark">
   <title>Fang Xu</title>
   <script>
@@ -15,9 +20,10 @@
     })();
   </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script defer src="site.js"></script>
 </head>
@@ -30,9 +36,9 @@
         <a href="#research">Research</a>
         <a href="#news">News</a>
         <a href="#publications">Publications</a>
-        <a href="#open-source">Open source</a>
-        <a href="#talks">Talks</a>
-        <a href="#blog">Blog</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
       </div>
       <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
         <svg class="moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.8 13.2A8.9 8.9 0 0 1 10.7 3.1 9 9 0 1 0 20.8 13.2Z"/></svg>
@@ -47,19 +53,22 @@
   <main class="wrap" id="main">
     <header class="hero" id="about">
       <div class="portrait" id="portrait">
-        <div class="portrait-placeholder" id="portrait-placeholder" role="img" aria-label="Profile photo placeholder">
-          <svg viewBox="0 0 100 120" aria-hidden="true"><circle cx="50" cy="39" r="18"/><path d="M16 104c0-23 15-39 34-39s34 16 34 39"/></svg>
-          <span>Photo coming soon</span>
-        </div>
+        <img src="assets/portrait.jpg" alt="Portrait of Fang Xu" width="420" height="504" fetchpriority="high" decoding="async">
       </div>
       <div class="hero-copy">
         <div class="name-row">
           <h1 data-name>Fang Xu</h1>
           <span class="name-chinese" id="name-chinese" lang="zh-CN" hidden></span>
         </div>
-        <p class="tagline" id="tagline" hidden></p>
-        <div class="biography" id="biography"><p class="muted">Biography coming soon.</p></div>
+        <p class="tagline" id="tagline">Biomedical Engineering · ShanghaiTech University</p>
+        <div class="biography" id="biography">
+          <p>I am an undergraduate student in Biomedical Engineering at ShanghaiTech University, working in the Wireless and Smart Bio-electronics (WiSe) Lab with Prof. Ze Xiong.</p>
+          <p>My research connects neural interfaces, computational design, and machine learning for biomedical signals. I develop tools for organoid electrode-interface design and cross-subject EEG emotion recognition.</p>
+          <p>Previously, I worked with Prof. Sung Il Park on adaptive wireless power transfer and flexible optoelectronic devices. I expect to graduate in July 2027.</p>
+        </div>
         <div class="profile-links" id="profile-links" aria-label="Profile links">
+          <a class="pill" href="mailto:xufang2023@shanghaitech.edu.cn">Email</a>
+          <a class="pill" href="assets/Fang-Xu-CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
           <a class="pill" href="https://github.com/Freddy-Hexas" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
@@ -67,39 +76,50 @@
 
     <section class="section" id="research" aria-labelledby="research-title">
       <h2 id="research-title">Research</h2>
-      <div class="research-grid" id="research-content"><p class="empty-state">Research directions coming soon.</p></div>
+      <div class="research-grid" id="research-content"></div>
     </section>
 
     <section class="section" id="news" aria-labelledby="news-title">
       <h2 id="news-title">News</h2>
-      <div id="news-content"><p class="empty-state">Updates coming soon.</p></div>
+      <div id="news-content"></div>
     </section>
 
     <section class="section" id="publications" aria-labelledby="publications-title">
       <h2 id="publications-title">Publications</h2>
-      <div id="publications-content"><p class="empty-state">Publications coming soon.</p></div>
+      <div id="publications-content"></div>
     </section>
 
-    <section class="section" id="open-source" aria-labelledby="open-source-title">
-      <h2 id="open-source-title">Open-source Highlights</h2>
-      <div id="open-source-content"><p class="empty-state">Projects coming soon.</p></div>
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Selected Projects</h2>
+      <div id="projects-content"></div>
     </section>
 
-    <section class="section" id="talks" aria-labelledby="talks-title">
-      <h2 id="talks-title">Talks</h2>
-      <div id="talks-content"><p class="empty-state">Talks coming soon.</p></div>
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <div id="experience-content"></div>
     </section>
 
-    <section class="section" id="blog" aria-labelledby="blog-title">
-      <h2 id="blog-title">Blog</h2>
-      <div id="blog-content"><p class="empty-state">No posts yet.</p></div>
+    <section class="section" id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+      <div id="education-content"></div>
     </section>
-    <noscript><p class="empty-state">Enable JavaScript to load the latest homepage content.</p></noscript>
+
+    <section class="section" id="service" aria-labelledby="service-title">
+      <h2 id="service-title">Teaching &amp; Service</h2>
+      <div id="service-content"></div>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="skills-grid" id="skills-content"></div>
+    </section>
+    <noscript><p>See my <a href="assets/Fang-Xu-CV.pdf">academic CV</a> for complete research and experience details.</p></noscript>
     <p class="content-error" id="content-error" role="status" hidden>Content is temporarily unavailable. Please try again later.</p>
   </main>
 
   <footer class="wrap site-footer">
     <p>© <span id="year">2026</span> <span data-name>Fang Xu</span></p>
+    <div class="footer-links" id="footer-links" aria-label="Contact links"></div>
     <a href="#about" class="back-to-top">Back to top <span aria-hidden="true">↑</span></a>
   </footer>
 </body>

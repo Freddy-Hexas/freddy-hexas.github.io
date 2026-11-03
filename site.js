@@ -65,7 +65,7 @@ function prepareScrollReveals() {
     }, { rootMargin: '0px 0px -32px 0px', threshold: 0 });
   }
 
-  const targets = '.portrait, .hero-copy, .section > h2, .section .empty-state, .research-area, .entry, .timeline > li';
+  const targets = '.portrait, .hero-copy, .section > h2, .section .empty-state, .research-area, .entry, .timeline > li, .skill-item';
   document.querySelectorAll(targets).forEach(node => {
     if (node.classList.contains('scroll-reveal')) return;
     node.classList.add('scroll-reveal');
@@ -109,7 +109,13 @@ function contentList(value) {
 function renderLinks(items, className = 'entry-links') {
   const row = element('div', className);
   for (const item of contentList(items)) {
-    if (item.label && safeURL(item.url)) row.append(link(item.label, item.url, className === 'profile-links' ? 'pill' : ''));
+    if (!item.label || !safeURL(item.url)) continue;
+    const anchor = link(item.label, item.url, className === 'profile-links' ? 'pill' : '');
+    if (item.newTab) {
+      anchor.target = '_blank';
+      anchor.rel = 'noopener noreferrer';
+    }
+    row.append(anchor);
   }
   return row;
 }
@@ -129,7 +135,8 @@ function renderProfile(profile) {
     document.getElementById('biography').replaceChildren(...paragraphs.map(text => element('p', '', text)));
   }
   const photoURL = safeURL(profile.photo, true);
-  if (photoURL) {
+  const existingPhoto = document.querySelector('#portrait img');
+  if (photoURL && (!existingPhoto || existingPhoto.src !== photoURL)) {
     const photo = element('img');
     photo.alt = profile.photoAlt || profile.name || 'Profile photo';
     photo.width = 420;
@@ -140,6 +147,7 @@ function renderProfile(profile) {
     photo.src = photoURL;
   }
   document.getElementById('profile-links').replaceChildren(...renderLinks(profile.links, 'profile-links').childNodes);
+  document.getElementById('footer-links').replaceChildren(...renderLinks(profile.links).childNodes);
 }
 function renderResearch(items) {
   if (!items.length) return;
@@ -154,20 +162,15 @@ function renderResearch(items) {
   });
   document.getElementById('research-content').replaceChildren(...cards);
 }
-function timeline(items, isBlog = false) {
+function timeline(items) {
   const list = element('ul', 'timeline');
   for (const item of items) {
     const row = element('li');
     const date = element('span', 'entry-date', item.date || '');
     const body = element('div');
-    if (isBlog) {
-      body.append(link(item.title || '', item.url, 'post-title'));
-      if (item.description) body.append(element('p', 'muted', item.description));
-    } else {
-      const text = element('p');
-      text.append(link(item.text || item.title || '', item.url));
-      body.append(text);
-    }
+    const text = element('p');
+    text.append(link(item.text || item.title || '', item.url));
+    body.append(text);
     row.append(date, body);
     list.append(row);
   }
@@ -187,16 +190,46 @@ function renderEntries(id, items) {
   if (!items.length) return;
   const entries = items.map(item => {
     const entry = element('article', 'entry');
+    if (item.id) entry.id = item.id;
+    const heading = element('div', 'entry-heading');
     const title = element('h3');
     title.append(link(item.title || '', item.url));
-    entry.append(title);
-    if (item.authors) entry.append(element('p', 'authors', item.authors));
+    heading.append(title);
+    if (item.period) heading.append(element('span', 'entry-period', item.period));
+    entry.append(heading);
+    if (item.role) entry.append(element('p', 'entry-role', item.role));
+    if (item.authors) {
+      const authors = element('p', 'authors');
+      const name = document.querySelector('[data-name]').textContent;
+      String(item.authors).split(name).forEach((part, index) => {
+        if (index) authors.append(element('strong', '', name));
+        authors.append(document.createTextNode(part));
+      });
+      entry.append(authors);
+    }
     if (item.venue) entry.append(element('p', 'venue', item.venue));
+    if (item.highlight) entry.append(element('p', 'entry-highlight', item.highlight));
     if (item.description) entry.append(element('p', 'description', item.description));
+    if (Array.isArray(item.bullets)) {
+      const list = element('ul', 'entry-bullets');
+      item.bullets.filter(text => typeof text === 'string' && text.trim()).forEach(text => list.append(element('li', '', text)));
+      entry.append(list);
+    }
     if (item.links) entry.append(renderLinks(item.links));
     return entry;
   });
   document.getElementById(id).replaceChildren(...entries);
+}
+
+function renderSkills(items) {
+  const entries = items.map(item => {
+    const entry = element('div', 'skill-item');
+    entry.append(element('h3', '', item.title || ''));
+    const values = Array.isArray(item.items) ? item.items.filter(value => typeof value === 'string') : [];
+    entry.append(element('p', '', values.join(' · ')));
+    return entry;
+  });
+  document.getElementById('skills-content').replaceChildren(...entries);
 }
 
 fetch('content.json')
@@ -209,11 +242,11 @@ fetch('content.json')
     renderResearch(contentList(data.research));
     renderNews(contentList(data.news));
     renderEntries('publications-content', contentList(data.publications));
-    renderEntries('open-source-content', contentList(data.openSource));
-    const talks = contentList(data.talks);
-    if (talks.length) document.getElementById('talks-content').replaceChildren(timeline(talks));
-    const posts = contentList(data.blog);
-    if (posts.length) document.getElementById('blog-content').replaceChildren(timeline(posts, true));
+    renderEntries('projects-content', contentList(data.projects));
+    renderEntries('experience-content', contentList(data.experience));
+    renderEntries('education-content', contentList(data.education));
+    renderEntries('service-content', contentList(data.service));
+    renderSkills(contentList(data.skills));
     prepareScrollReveals();
   })
   .catch(error => {
