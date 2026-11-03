@@ -1,0 +1,6 @@
+# Automated crawling and indexing are not authorized.
+# Content-use notice: https://freddy-hexas.github.io/content-use.html
+# These instructions are a publisher preference, not access control.
+
+User-agent: *
+Disallow: /

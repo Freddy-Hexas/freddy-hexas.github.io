@@ -4,6 +4,18 @@
 
 个人学术主页，使用 HTML、CSS、JavaScript 和静态资源，无需构建即可部署。布局参考 [shiyicao.com](https://shiyicao.com/)，代码独立实现。
 
+## 自动访问与收录偏好
+
+- `robots.txt` 使用 `User-agent: *` 和 `Disallow: /`，请求所有自动客户端不要抓取整个站点，包括 JSON、照片和 CV。
+- 首页和说明页声明 `noindex, nofollow, nosnippet, noimageindex`，表达不收录、不跟踪链接、不展示摘要和不索引页面图片的偏好。
+- 页脚链接到双语说明 `content-use.html`，仓库内的 `CONTENT_USE_POLICY.md` 记录同一用途限制；未经书面许可，不授权自动采集、AI/LLM 代理读取、训练、微调等用途。法律、平台条款及第三方既有许可仍然适用。
+
+这些设置是自愿遵守的规则与声明，不是登录验证、网络封禁或防火墙；公开 GitHub 仓库及 raw 文件入口仍可被独立访问。它们也不能移除已被保存或用于训练的数据。
+
+**已有搜索结果：** Google 必须能够抓取页面才能读取 `noindex`。本项目按所有者选择立即禁止全部自动抓取，因此不能承诺已有 URL 自动退索引；必要时需在 Google Search Console、Bing 等站长平台申请移除。不能把 robots.txt 和 noindex 的组合当作已完成搜索结果清除的证明。
+
+参考：[Google robots.txt 说明](https://developers.google.com/search/docs/crawling-indexing/robots/intro)、[noindex 与抓取权限](https://developers.google.com/search/docs/crawling-indexing/block-indexing)、[公开 GitHub 仓库的许可与可访问性](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)。
+
 ## 内容维护
 
 日常内容集中在 `content.json`，在 GitHub 编辑并提交后，GitHub Pages 会自动更新。
