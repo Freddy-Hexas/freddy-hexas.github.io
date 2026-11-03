@@ -14,7 +14,6 @@
     "photoAlt": "Portrait of Fang Xu",
     "links": [
       { "label": "Email", "url": "mailto:xufang2023@shanghaitech.edu.cn" },
-      { "label": "CV", "url": "assets/Fang-Xu-CV.pdf", "newTab": true },
       { "label": "GitHub", "url": "https://github.com/Freddy-Hexas" }
     ]
   },

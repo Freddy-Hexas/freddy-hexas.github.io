@@ -6,7 +6,7 @@
 
 ## 自动访问与收录偏好
 
-- `robots.txt` 使用 `User-agent: *` 和 `Disallow: /`，请求所有自动客户端不要抓取整个站点，包括 JSON、照片和 CV。
+- `robots.txt` 使用 `User-agent: *` 和 `Disallow: /`，请求所有自动客户端不要抓取整个站点，包括 JSON、照片等资源。
 - 首页声明 `noindex, nofollow, nosnippet, noimageindex`，表达不收录、不跟踪链接、不展示摘要和不索引页面图片的偏好。
 - `llms.txt` 仅包含中英文拒绝采集的告知，`llm.txt` 是同文副本；声明不授权未经书面许可的自动采集、AI/LLM 代理读取、训练、微调等用途。网站不挂可见说明链接或独立说明页面。
 
@@ -24,7 +24,7 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| `profile` | 姓名、简介、照片和 Email / CV / GitHub 链接 |
+| `profile` | 姓名、简介、照片和 Email / GitHub 链接 |
 | `research` | 研究方向 |
 | `news` | 按新到旧排列的动态 |
 | `publications` | 论文和在审稿件；请保留准确状态 |
@@ -34,7 +34,7 @@
 | `service` | 助教与学生组织经历 |
 | `skills` | 编程、建模、硬件、微加工及语言技能 |
 
-内容根据 2026 年 10 月 30 日更新的学术 CV 整理。ARISE 标注为在审稿件；已发表论文链接到期刊及 DOI，DREAM 链接到公开仓库。公开联系信息使用学校邮箱。
+内容根据 2026 年 10 月 30 日更新的个人学术资料整理。ARISE 标注为在审稿件；已发表论文链接到期刊及 DOI，DREAM 链接到公开仓库。公开联系信息使用学校邮箱。
 
 JSON 使用英文双引号；同一数组中的记录以逗号分隔，最后一条后不加逗号。正文为纯文本，不需要写 HTML。
 
@@ -48,25 +48,13 @@ styles.css                 布局、主题、手机适配和滚动渐显
 site.js                    内容加载与交互
 content.json               个人内容
 assets/portrait.jpg        主页照片
-assets/Fang-Xu-CV.pdf       可公开下载的学术 CV
 assets/fonts/              Source Serif 4 字体及开源许可
-scripts/build_cv.py        从 content.json 生成公开 CV
 .nojekyll                  直接发布静态文件
 ```
 
 标题使用本地 Source Serif 4 字体：桌面字号 64px，字重 500，字间距 -1px。手机端自动调整。正文 Inter 通过 Google Fonts 加载，失败时使用系统字体。
 
 内容首次进入视口时会缓缓淡入并轻微上移，约 1 秒完成。开启系统“减少动态效果”时，内容直接显示。
-
-## 更新公开 CV
-
-PDF 是静态文件。更新网页 JSON 后如需同步 CV，请在装有 ReportLab 的 Python 3.9+ 环境运行：
-
-```sh
-python3 scripts/build_cv.py
-```
-
-生成的公开版 CV 使用学校邮箱、GitHub 和主页链接，未加入私人电话号码。修改后检查 PDF 排版，再一起提交。
 
 ## 本地预览
 
