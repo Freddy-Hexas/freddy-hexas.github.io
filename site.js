@@ -43,6 +43,40 @@ matchMedia('(min-width: 721px)').addEventListener('change', event => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Reveal each content block once, as it scrolls into view.
+const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+let revealObserver;
+
+function prepareScrollReveals() {
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) {
+    if (revealObserver) revealObserver.disconnect();
+    revealObserver = null;
+    document.querySelectorAll('.scroll-reveal').forEach(node => node.classList.add('is-visible'));
+    return;
+  }
+
+  if (!revealObserver) {
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -32px 0px', threshold: 0 });
+  }
+
+  const targets = '.portrait, .hero-copy, .section > h2, .section .empty-state, .research-area, .entry, .timeline > li';
+  document.querySelectorAll(targets).forEach(node => {
+    if (node.classList.contains('scroll-reveal')) return;
+    node.classList.add('scroll-reveal');
+    if (node.matches('.hero-copy, .empty-state')) node.style.setProperty('--reveal-delay', '100ms');
+    revealObserver.observe(node);
+  });
+}
+
+reducedMotion.addEventListener('change', prepareScrollReveals);
+prepareScrollReveals();
+
 // Content is always inserted as text. Only supported URL protocols become links.
 function element(tag, className, text) {
   const node = document.createElement(tag);
@@ -180,6 +214,7 @@ fetch('content.json')
     if (talks.length) document.getElementById('talks-content').replaceChildren(timeline(talks));
     const posts = contentList(data.blog);
     if (posts.length) document.getElementById('blog-content').replaceChildren(timeline(posts, true));
+    prepareScrollReveals();
   })
   .catch(error => {
     console.error('Unable to load homepage content:', error);
