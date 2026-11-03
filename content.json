@@ -1,0 +1,20 @@
+{
+  "profile": {
+    "name": "Fang Xu",
+    "nameChinese": "",
+    "description": "Fang Xu's personal homepage.",
+    "tagline": "",
+    "bio": [],
+    "photo": "",
+    "photoAlt": "",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/Freddy-Hexas" }
+    ]
+  },
+  "research": [],
+  "news": [],
+  "publications": [],
+  "openSource": [],
+  "talks": [],
+  "blog": []
+}
