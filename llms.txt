@@ -1,0 +1,15 @@
+# Fang Xu - automated-access notice
+
+> Automated collection and AI use of this site's original personal materials are not authorized without prior written permission from the site owner.
+
+Publisher preferences: no crawling, scraping, indexing, AI/LLM-agent retrieval, bulk downloading, personal-data aggregation, dataset creation, model training, or fine-tuning. These preferences cover all original personal content on this site, including profile text, structured data, the CV, and the portrait.
+
+Crawler access directives are published in [robots.txt](/robots.txt). This file is a refusal notice only: it grants no access permission and is not a standardized robots-style deny mechanism. It does not provide authentication or technical enforcement, and compliance is not guaranteed.
+
+Normal resource loading by a human-operated browser, assistive reading technology, and owner-authorized maintenance are permitted. Applicable law, platform terms, and separate licences for fonts, publications, and linked software continue to apply. Public GitHub and raw-file endpoints remain independently accessible; existing copies and previously collected data are not removed by this notice.
+
+本站不授权未经事先书面许可的自动爬取、抓取、索引、AI/LLM 代理读取、批量下载、个人信息聚合、数据集构建、模型训练或微调。此偏好涵盖本站原创个人介绍、结构化资料、简历和肖像等材料。
+
+爬虫访问约定以 robots.txt 为准。本文件仅作拒绝采集的告知，不是标准禁爬协议，也不构成技术访问控制。个人正常浏览、辅助阅读技术及网站所有者授权的维护操作不受此限制；法律、平台条款与第三方已有许可仍适用。
+
+Updated: 2026-11-03

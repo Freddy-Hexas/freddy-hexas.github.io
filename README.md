@@ -7,8 +7,10 @@
 ## 自动访问与收录偏好
 
 - `robots.txt` 使用 `User-agent: *` 和 `Disallow: /`，请求所有自动客户端不要抓取整个站点，包括 JSON、照片和 CV。
-- 首页和说明页声明 `noindex, nofollow, nosnippet, noimageindex`，表达不收录、不跟踪链接、不展示摘要和不索引页面图片的偏好。
-- 页脚链接到双语说明 `content-use.html`，仓库内的 `CONTENT_USE_POLICY.md` 记录同一用途限制；未经书面许可，不授权自动采集、AI/LLM 代理读取、训练、微调等用途。法律、平台条款及第三方既有许可仍然适用。
+- 首页声明 `noindex, nofollow, nosnippet, noimageindex`，表达不收录、不跟踪链接、不展示摘要和不索引页面图片的偏好。
+- `llms.txt` 仅包含中英文拒绝采集的告知，`llm.txt` 是同文副本；声明不授权未经书面许可的自动采集、AI/LLM 代理读取、训练、微调等用途。网站不挂可见说明链接或独立说明页面。
+
+常见文件名是 `llms.txt`。[原提案](https://llmstxt.org/)用于提供面向 LLM 的网站概要与内容指引，不是标准禁爬协议。本项目只在其中发布拒绝采集的告知，不提供简历、照片或站点内容的索引；爬虫访问约定仍以 `robots.txt` 为准。修改告知时，请同步修改 `llms.txt` 与 `llm.txt`。
 
 这些设置是自愿遵守的规则与声明，不是登录验证、网络封禁或防火墙；公开 GitHub 仓库及 raw 文件入口仍可被独立访问。它们也不能移除已被保存或用于训练的数据。
 

@@ -1,5 +1,5 @@
 # Automated crawling and indexing are not authorized.
-# Content-use notice: https://freddy-hexas.github.io/content-use.html
+# Publisher notice: https://freddy-hexas.github.io/llms.txt
 # These instructions are a publisher preference, not access control.
 
 User-agent: *
