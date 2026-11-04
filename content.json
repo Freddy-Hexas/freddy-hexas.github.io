@@ -1,14 +1,14 @@
 {
-  "contentUpdated": "2026-11-03",
+  "contentUpdated": "2026-11-04",
   "profile": {
     "name": "Fang Xu",
     "nameChinese": "",
     "description": "Fang Xu is a biomedical engineering undergraduate at ShanghaiTech University, working on neural interfaces, computational design, and machine learning for biomedical signals.",
-    "tagline": "Biomedical Engineering · ShanghaiTech University",
+    "tagline": "",
     "bio": [
-      "I am an undergraduate student in Biomedical Engineering at ShanghaiTech University, working in the Wireless and Smart Bio-electronics (WiSe) Lab with Prof. Ze Xiong.",
-      "My research connects neural interfaces, computational design, and machine learning for biomedical signals. I develop tools for organoid electrode-interface design and cross-subject EEG emotion recognition.",
-      "Previously, I worked with Prof. Sung Il Park on adaptive wireless power transfer and flexible optoelectronic devices. I expect to graduate in July 2027."
+      "I am an undergraduate student in [Biomedical Engineering](https://bme.shanghaitech.edu.cn/bme_en/) at [ShanghaiTech University](https://www.shanghaitech.edu.cn/en/), advised by [Prof. Ze Xiong](https://bme.shanghaitech.edu.cn/bme_en/2021/0326/c8252a1073789/page.htm) and affiliated with the [Wireless and Smart Bio-electronics (WiSe) Lab](https://xiong-group.com/).",
+      "Previously, I was fortunate to work with [Prof. Sung Il Park](https://bme.shanghaitech.edu.cn/bme_en/2021/0326/c8252a1087808/page.htm) in the [Park Lab](https://parklab.bme.shanghaitech.edu.cn/) at [ShanghaiTech University](https://www.shanghaitech.edu.cn/en/) on adaptive wireless power transfer and flexible optoelectronic devices for optogenetics. I expect to receive my B.Eng. in Biomedical Engineering in July 2027.",
+      "I am mainly interested in **automated design** of neural interfaces and **machine learning** for biomedical signals, particularly brain-organoid electrode interfaces and cross-subject EEG emotion recognition."
     ],
     "photo": "assets/portrait.jpg",
     "photoAlt": "Portrait of Fang Xu",
@@ -167,17 +167,19 @@
     {
       "id": "experience-wise",
       "title": "Wireless and Smart Bio-electronics (WiSe) Lab",
+      "url": "https://xiong-group.com/",
       "period": "Sep 2025 – Present",
       "role": "Undergraduate Researcher · ShanghaiTech University",
-      "description": "Advisor: Prof. Ze Xiong. Research on computational design of organoid electrode interfaces and cross-subject EEG emotion recognition.",
+      "description": "Advisor: [Prof. Ze Xiong](https://bme.shanghaitech.edu.cn/bme_en/2021/0326/c8252a1073789/page.htm). Research on computational design of organoid electrode interfaces and cross-subject EEG emotion recognition.",
       "projectIds": ["project-arise", "project-dream"]
     },
     {
       "id": "experience-park",
       "title": "Park Lab",
+      "url": "https://parklab.bme.shanghaitech.edu.cn/",
       "period": "Sep 2024 – Sep 2025",
       "role": "Undergraduate Researcher · ShanghaiTech University",
-      "description": "Advisor: Prof. Sung Il Park. Worked on AI-driven adaptive wireless power transfer and flexible wireless optoelectronic devices.",
+      "description": "Advisor: [Prof. Sung Il Park](https://bme.shanghaitech.edu.cn/bme_en/2021/0326/c8252a1087808/page.htm). Worked on AI-driven adaptive wireless power transfer and flexible wireless optoelectronic devices.",
       "projectIds": ["project-wireless", "project-optoelectronics"]
     },
     {

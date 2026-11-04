@@ -36,7 +36,7 @@
 
 内容根据 2026 年 10 月 30 日更新的个人学术资料整理。ARISE 标注为在审稿件；已发表论文链接到期刊及 DOI，DREAM 链接到公开仓库。公开联系信息使用学校邮箱。
 
-JSON 使用英文双引号；同一数组中的记录以逗号分隔，最后一条后不加逗号。正文为纯文本，不需要写 HTML。
+JSON 使用英文双引号；同一数组中的记录以逗号分隔，最后一条后不加逗号。简介 `profile.bio` 和条目的 `description` 支持 `[文字](URL)` 链接及 `**重点**` 加粗，其他字段为纯文本，不需要写 HTML。链接只接受安全的 HTTP、HTTPS、mailto 或站内地址。
 
 论文、项目和经历可使用 `id`、`title`、`period`、`role`、`description`、`bullets`、`links` 字段。论文还支持 `authors` 和 `venue`，项目支持奖项说明 `highlight`。`id` 用于站内跳转，修改时也请更新对应链接。链接可设置 `newTab: true`。
 

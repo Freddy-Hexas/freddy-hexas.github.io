@@ -103,6 +103,19 @@ function link(label, value, className) {
   }
   return node;
 }
+// Support inline links and emphasis without accepting raw HTML from content.json.
+function inlineText(parent, value) {
+  const text = String(value);
+  const tokens = /\[([^\]]+)\]\(([^\s)]+)\)|\*\*([^*]+)\*\*/g;
+  let cursor = 0;
+  for (const match of text.matchAll(tokens)) {
+    parent.append(document.createTextNode(text.slice(cursor, match.index)));
+    parent.append(match[3] ? element('strong', '', match[3]) : link(match[1], match[2]));
+    cursor = match.index + match[0].length;
+  }
+  parent.append(document.createTextNode(text.slice(cursor)));
+  return parent;
+}
 function contentList(value) {
   return Array.isArray(value) ? value.filter(item => item && typeof item === 'object') : [];
 }
@@ -132,7 +145,7 @@ function renderProfile(profile) {
   }
   if (Array.isArray(profile.bio) && profile.bio.some(paragraph => typeof paragraph === 'string' && paragraph.trim())) {
     const paragraphs = profile.bio.filter(paragraph => typeof paragraph === 'string' && paragraph.trim());
-    document.getElementById('biography').replaceChildren(...paragraphs.map(text => element('p', '', text)));
+    document.getElementById('biography').replaceChildren(...paragraphs.map(text => inlineText(element('p'), text)));
   }
   const photoURL = safeURL(profile.photo, true);
   const existingPhoto = document.querySelector('#portrait img');
@@ -209,7 +222,7 @@ function renderEntries(id, items) {
     }
     if (item.venue) entry.append(element('p', 'venue', item.venue));
     if (item.highlight) entry.append(element('p', 'entry-highlight', item.highlight));
-    if (item.description) entry.append(element('p', 'description', item.description));
+    if (item.description) entry.append(inlineText(element('p', 'description'), item.description));
     if (Array.isArray(item.bullets)) {
       const list = element('ul', 'entry-bullets');
       item.bullets.filter(text => typeof text === 'string' && text.trim()).forEach(text => list.append(element('li', '', text)));
